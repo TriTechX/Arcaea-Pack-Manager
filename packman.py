@@ -1,10 +1,11 @@
 """
 Combines logic from https://www.reddit.com/r/arcaea/comments/1i132ai/arcaea_nsw_mods_packing_script/ for repacking,
-and my own for unpacking for multifunctional .pack manager, useful for modding the NX version of Arcaea. Tested on
+and my own for unpacking, for a multifunctional .pack manager, useful for modding the NX version of Arcaea. Tested on
 v2.0.1 of the game.
 """
 
 import json
+import copy
 import os
 import sys
 import threading
@@ -356,8 +357,8 @@ class ArcaeaPackManager:
             self.log(f"Starting repacking from {work_dir}")
             
             # Load base JSON structure
-            pack_index = BASE_JSON.copy()
-            
+            pack_index = copy.deepcopy(BASE_JSON) # fixed a state persistence issue when previous repacks would impact each other due to shallow copies
+
             # Walk through working directory
             for root, dirs, files in os.walk(work_dir):
                 for filename in files:
