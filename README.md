@@ -24,6 +24,9 @@ A GUI utility for extracting/repacking .pack files in NX Arcaea's RomFS. Useful 
 - First, extract the pack you wish to modify
   - To keep your mod small, you should modify the smallest arc_x.pack files
   - I choose to modify arc_1.pack, as this is the smallest pack (around 39 MB) that contains charts and characters, unless you really enjoy all of the Groove Coaster charts/content (which this pack contains), I suggest modifying this one
+  - There is a caveat, if you don't own the Groove Coaster DLC then you cannot access this content because the game will not let you play it
+  - If you do not own any DLC, then you will have to modify one of the core packs (such as arc_0.pack), and ensure that you modify content that you can access in order to utilise the mod
+  - This just means your mod will be very large
 - Then, modify the content of the extracted pack
   - Charts are found in 'songs', characters are found in 'char', misc sound effects are in 'audio', misc textures are in 'img', sky note textures and models are found in 'models'
 - You can modify bpm/chart constants in the 'songlist' file in 'songs', and the 'songs.json' file in 'switch-local-29-06-20', except I've had difficulty when trying to get songs.json changes to show in game, my theory is that every instance of songlist and songs.json must be modified in every .pack to make changes, but this is not worth it because the mod size would then exceed 800 MB, I will gladly be proven wrong
